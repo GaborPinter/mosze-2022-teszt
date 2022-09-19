@@ -4,21 +4,22 @@ constexpr int N_ELEMENTS = 100;
 
 int main()
 {
-    int *b = new int[NELEMENTS];    // hiányzik az aláhúzás karakter
-    std::cout << '1-100 ertekek duplazasa'      // kettõ aposztróf közé kell írni a szöveget, hiányzik a pontos vesszõ
-    for (int i = 0;)       // nincs befejezve a for ciklus
+    int* b = new int[N_ELEMENTS];
+    std::cout << "1-100 ertekek duplazasa";
+    for (int i = 0;i < N_ELEMENTS; i++)
     {
-        b[i] = i * 2;
+        b[i] = (i+1) * 2;
     }
-    for (int i = 0; i; i++)     // i<N_ELEMENTS
+    std::cout << std::endl;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        std::cout << "Ertek:"   // hiányzik a változó és a pontos vesszõ is
+        std::cout << "Ertek:" << b[i] << std::endl;
     }
     std::cout << "Atlag szamitasa: " << std::endl;
-    int atlag;      // nincs kezdõérték megadva
-    for (int i = 0; i < N_ELEMENTS, i++)
+    int atlag = 0;
+    for (int i = 0; i < N_ELEMENTS; i++)
     {
-        atlag += b[i]
+        atlag += b[i];
     }
     atlag /= N_ELEMENTS;
     std::cout << "Atlag: " << atlag << std::endl;
